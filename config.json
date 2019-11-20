@@ -1,0 +1,43 @@
+{
+  "variables": {
+    "a": 100,
+    "b": "two",
+    "c": ["one", "two", "three", "four"],
+    "d": 100.35
+  },
+  "expressions": [
+    {
+      "function": "add",
+      "operands": [
+        200,
+        100
+      ],
+      "result": {
+        "type": "intermediate",
+        "name": "simple_variable"
+      }
+    },
+    {
+      "function": "include",
+      "operands": [
+        "variables#b",
+        "variables#c"
+      ],
+      "result": {
+        "output": "output",
+        "name": "output_variable1"
+      }
+    },
+    {
+      "function": "subtract",
+      "operands": [
+        "variables#simple_variable",
+        "variables#d"
+      ],
+      "result": {
+        "output": "output",
+        "name": "output_variable2"
+      }
+    }
+  ]
+}
