@@ -1,5 +1,3 @@
-#! /Users/olegkulakov/.rvm/rubies/ruby-2.6.5/bin/ruby
-
 =begin
 ToDo if operand is variable - check and use value
 if result is intermediate add new variable
@@ -13,6 +11,7 @@ functions = Functions.new
 file = File.read("./config.json")
 data = JSON.parse(file)
 
+#ToDo: convert variables into hash where keys is symbol
 variables = data['variables']
 expressions = data['expressions']
 expressions.each do |expression|
