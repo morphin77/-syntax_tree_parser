@@ -1,5 +1,6 @@
+# Functions
 module Functions
-  def add (a, b)
-    a + b
+  def self.add(first_operand, second_operand)
+    first_operand + second_operand
   end
 end

@@ -18,7 +18,7 @@
       }
     },
     {
-      "function": "include",
+      "function": "in",
       "operands": [
         "variables#b",
         "variables#c"

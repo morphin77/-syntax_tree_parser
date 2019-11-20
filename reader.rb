@@ -1,25 +1,26 @@
-=begin
-ToDo if operand is variable - check and use value
-if result is intermediate add new variable
-if result is output add new variabl and add it in hash output_variable1
-return output after all
-=end
+# frozen_string_literal: true
 
-require "json"
-require_relative "functions"
-functions = Functions.new
-file = File.read("./config.json")
+# TODO: if operand is variable - check and use value
+# if result is intermediate add new variable
+# if result is output add new variable and add it in hash output_variable1
+# return output after all
+
+require 'json'
+require_relative 'functions'
+file = File.read('./config.json')
 data = JSON.parse(file)
 
-#ToDo: convert variables into hash where keys is symbol
+# TODO: convert variables into hash where keys is symbol
 variables = data['variables']
 expressions = data['expressions']
 expressions.each do |expression|
-  finded = Functions.instance_methods.include? expression["function"].to_sym
-  if finded
-    p functions.method(expression["function"]).call(*expression["operands"])
+  found = Functions.methods.include? expression['function'].to_sym
+  if found
+    p Functions
+      .public_method(expression['function'].to_sym)
+      .call(*expression['operands'])
   else
-    p "method #{expression["function"]} not found"
+    p "method #{expression['function']} not found"
     next
   end
 end
